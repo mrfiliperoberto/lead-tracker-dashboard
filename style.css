@@ -1,0 +1,208 @@
+/* ==== Variables ==== */
+:root {
+    --color-primary: hsl(204, 70%, 53%);
+    --color-teal:#0F6E56;
+    --color-teal-light:#E1F5EE;
+    --color-amber: #FBBF24;
+    --color-amber-light: #FAEEDA;
+    --color-primary-light: #DBEAFE;
+    --color-bg: #F8F7FF;
+    --color-surface: #FFFFFF;
+    --color-border: #E0E0E0;
+    --color-text: #1A1A2E;
+    --color-text-muted: #666680;
+    --radius: 12px;
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* ==== RESET E BASE ==== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* includes padding and border in the element's total width and height */
+}
+body {
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+    background: var(--color-bg);
+    color: var(--color-text);
+    min-height: 100vh;
+}
+
+/* ==== Headers ==== */
+header {
+    background: var(--color-primary);
+    padding: 32px 40px;
+}
+
+.header-content h1 {
+    color: white;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+.header-content p {
+    color: rgba(255,255,255,0.75);
+    font-size: 15px;
+}
+
+/* ==== Main ==== */
+main {
+    max-width: 1100px;
+    margin: 0 auto; /* centers the main content */
+    padding: 32px 40px;
+}
+
+/*metrics*/
+.metrics {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 28px;
+}
+.metric-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    flex: 1; /* makes all cards take equal width */
+    gap: 4px;
+    display: flex;
+    flex-direction: column;
+}
+.metric-number {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+.metric-label {
+    font-size: 13px;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* ==== Controls ==== */
+.controls {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.filters {
+    display: flex;
+    gap: 8px;
+}
+.filter-btn {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    padding: 8px 18px;
+    font-size: 14px;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.filter-btn.active {
+    background: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+}
+.search-export {
+    display: flex;
+    gap: 10px;
+}
+#search-input {
+    padding: 8px 16px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    font-size: 14px;
+    width: 260px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+#search-input:focus {
+    border-color: var(--color-primary);
+}
+#export-btn {
+    background: var(--color-teal);
+    border: none;
+    border-radius: var(--radius);
+    padding: 8px 18px;
+    font-size: 14px;
+    color: white;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+#export-btn:hover {
+    opacity: 0.85;
+}
+/* ==== grid of leads ==== */
+.leads-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+}
+/* ==== Lead Card ==== */
+.lead-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.lead-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+.lead-header {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 12px;
+    justify-content: space-between;
+}
+.lead-name {
+    font-size: 13px;
+    font-weight: 600;
+}
+.lead-company {
+    font-size: 13px;
+    color: var(--color-text-muted);
+    margin-top: 2px;
+}
+.status-badge {
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+.status-new {
+    background: var(--color-primary-light);
+    color: var(--color-primary);
+}
+.status-contacted {
+    background: var(--color-amber-light);
+    color: var(--color-amber);
+}
+.status-converted {
+    background: var(--color-teal-light);
+    color: var(--color-teal);
+}
+.lead-info {
+    font-size: 13px;
+    color: var(--color-text-muted);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--color-text-muted);
+    grid-column: 1 / -1; /* makes the empty state span all columns */
+}
