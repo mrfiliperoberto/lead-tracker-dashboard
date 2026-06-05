@@ -9,6 +9,7 @@ Built with vanilla HTML, CSS, and JavaScript — no frameworks.
 - Live metrics: total leads, contacted, converted
 - Export all leads as CSV with one click
 - Responsive layout for desktop and mobile
+- Add new leads directly from the dashboard
 
 ## Live Demo
 https://mrfiliperoberto.github.io/lead-tracker-dashboard
