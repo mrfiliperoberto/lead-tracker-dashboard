@@ -206,3 +206,48 @@ main {
     color: var(--color-text-muted);
     grid-column: 1 / -1; /* makes the empty state span all columns */
 }
+
+/* ==== New Lead Form ==== */
+.new-lead-form {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow);
+}
+.new-lead-form h2 {
+    font-size: 18px;
+    margin-bottom: 16px;
+    color: var(--color-text);
+}
+.form-fields {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+}
+.form-fields input,
+.form-fields select {
+    padding: 10px 16px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    font-size: 14px;
+    outline: none;
+    flex: 1;
+    min-width: 150px;
+}
+.form-fields input:focus,
+.form-fields select:focus {
+    border-color: var(--color-primary);
+}
+#add-lead-btn {
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius);
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: 600;
+}

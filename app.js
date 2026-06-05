@@ -143,3 +143,37 @@ document.getElementById("export-btn")
   a.click();
   URL.revokeObjectURL(url);
 });
+
+// ===== EVENT: Add new lead =====
+document.getElementById("add-lead-btn").addEventListener("click", () => {
+    const nameInput = document.getElementById("new-lead-name");
+    const companyInput = document.getElementById("new-lead-company");
+    const emailInput = document.getElementById("new-lead-email");
+    const statusInput = document.getElementById("new-lead-status");
+
+    const name = nameInput.value.trim();
+    const company = companyInput.value.trim();
+    const email = emailInput.value.trim();
+    const status = statusInput.value;
+
+    if (!name || !company || !email) {
+        return; // Basic validation to prevent empty fields
+    }
+
+    const newId = leads.length > 0 ? Math.max(...leads.map(l => l.id)) + 1 : 1;
+
+    leads.push({
+        id: newId,
+        name: name,
+        company: company,
+        email: email,
+        status: status
+    });
+
+    nameInput.value = "";
+    companyInput.value = "";
+    emailInput.value = "";
+    statusInput.value = "new";
+
+    applyFilters();
+});
